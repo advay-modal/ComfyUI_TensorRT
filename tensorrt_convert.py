@@ -279,7 +279,7 @@ class TRT_MODEL_CONVERSION_BASE:
             return ()
 
         os.makedirs(os.path.dirname(output_onnx), exist_ok=True)
-        torch.onnx.export(
+        torch.onnx.dynamo_export(
             unet,
             inputs,
             output_onnx,
